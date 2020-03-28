@@ -1,0 +1,1 @@
+Retrieve data about economic entities registered in CZ ARES registry opendata dataset.
