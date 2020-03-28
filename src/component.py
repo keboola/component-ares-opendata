@@ -13,13 +13,12 @@ from kbc.env_handler import KBCEnvHandler
 from ares import parser
 
 # configuration variables
-KEY_API_TOKEN = '#api_token'
 ARES_SET_URL = 'http://wwwinfo.mfcr.cz/ares/ares_vreo_all.tar.gz'
 
 # #### Keep for debug
 KEY_DEBUG = 'debug'
 
-MANDATORY_PARS = [KEY_API_TOKEN, KEY_API_TOKEN]
+MANDATORY_PARS = []
 MANDATORY_IMAGE_PARS = []
 
 APP_VERSION = '0.0.1'
@@ -53,8 +52,9 @@ class Component(KBCEnvHandler):
         Main execution code
         '''
         params = self.cfg_params  # noqa
-
+        logging.info('Downloading last version of the ARES dataset..')
         tar_file = self.__download_ares_file(ARES_SET_URL)
+        logging.info('Parsing data..')
         parser.process_data(tar_file, self.tables_out_path)
 
         logging.info('Finished!')
