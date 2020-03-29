@@ -60,13 +60,15 @@ class Component(KBCEnvHandler):
         logging.info('Finished!')
 
     def __download_ares_file(self, url):
-        res = requests.get(url)
+        res = requests.get(url, stream=True)
         res.raise_for_status()
         root_folder = Path(self.data_path).parent
         result_file = root_folder.joinpath('tmp/ares_vreo_all.tar.gz')
         result_file.parent.mkdir(parents=True, exist_ok=True)
         with open(result_file, 'wb+') as out:
-            out.write(res.content)
+            for chunk in res.iter_content(chunk_size=8192):
+                if chunk:  # filter out keep-alive new chunks
+                    out.write(chunk)
 
         return result_file
 
