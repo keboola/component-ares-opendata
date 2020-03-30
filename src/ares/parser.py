@@ -88,6 +88,8 @@ def process_data(source_file, output_folder):
         for rw, el in enumerate(tf):
             if rw % 5000 == 0:
                 print(' %d' % rw, end='\r')
+                # memory leak fix
+                tf.members = []
 
             fl = tf.extractfile(el)
 
