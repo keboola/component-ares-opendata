@@ -1,1 +1,15 @@
-{}
+{
+  "type": "object",
+  "title": "extractor configuration",
+  "required": [
+    "ares_url"
+  ],
+  "properties": {
+    "ares_url": {
+      "type": "string",
+      "title": "ARES dataset url",
+      "propertyOrder": 100,
+      "default": "http://wwwinfo.mfcr.cz/ares/ares_vreo_all.tar.gz"
+    }
+  }
+}
