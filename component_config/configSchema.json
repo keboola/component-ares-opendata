@@ -8,6 +8,7 @@
     "ares_url": {
       "type": "string",
       "title": "ARES dataset url",
+      "description": "This may be used to download older versions of dataset, otherwise the default URL is used.",
       "propertyOrder": 100,
       "default": "http://wwwinfo.mfcr.cz/ares/ares_vreo_all.tar.gz"
     }
