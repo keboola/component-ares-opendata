@@ -88,7 +88,7 @@ def process_data(source_file, output_folder):
 
         for rw, el in enumerate(tf):
             if rw % 5000 == 0:
-                logging.info('Parsed records: %d' % rw, end='\r')
+                logging.info(f"Parsed records: {rw}")
                 # memory leak fix
                 tf.members = []
 
