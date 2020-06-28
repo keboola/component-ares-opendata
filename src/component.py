@@ -76,8 +76,8 @@ class Component(KBCEnvHandler):
         opendata.download_ico_change_set(ico_change_set_path)
         self._add_change_date(ico_change_set_path, last_update_date)
         self.configuration.write_table_manifest(file_name=str(ico_change_set_path),
-                                                primary_key=['ICO', 'CHANGE_DT', 'DATASET_UPDATED'],
-                                                columns=['ICO', 'CHANGE_DT'])
+                                                primary_key=['ICO', 'CHANGE_DT'],
+                                                columns=['ICO', 'CHANGE_DT', 'DATASET_UPDATED'])
 
         self.write_state_file({'last_update': str(last_update_date)})
 
