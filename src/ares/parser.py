@@ -64,9 +64,9 @@ def organi(root, ico, et):
 # -----------------------------------------------------------------------------
 def process_data(source_file, output_folder):
     with tarfile.open(source_file, 'r:gz') as tf, open(
-            os.path.join(output_folder, 'firmy.csv'), 'w', encoding='utf8') as ud, open(
-        os.path.join(output_folder, 'fosoby.csv'), 'w', encoding='utf8') as fo, open(
-        os.path.join(output_folder, 'posoby.csv'), 'w', encoding='utf8') as po:
+            os.path.join(output_folder, 'firmy.csv'), 'w', encoding='utf8') as ud, \
+            open(os.path.join(output_folder, 'fosoby.csv'), 'w', encoding='utf8') as fo, \
+            open(os.path.join(output_folder, 'posoby.csv'), 'w', encoding='utf8') as po:
         udc = csv.writer(ud)
         foc = csv.writer(fo)
         poc = csv.writer(po)
