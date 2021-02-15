@@ -28,7 +28,7 @@ def get_current_export_date():
     """
     res = requests.get(ARES_VREO_URL)
     datum = res.json()['vreo'][0]['datumAktualizace']
-    return datetime.strptime(datum, '%d.%m.%Y').date()
+    return datetime.strptime(datum, '%Y-%m-%d').date()
 
 
 def download_ico_change_set(result_folder_path):
